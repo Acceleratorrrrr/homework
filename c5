@@ -1,0 +1,17 @@
+#include <iostream> 
+#include <iomanip> 
+using namespace std;
+int main()
+{
+	int i;
+	int f[20] = { 1,1 }; //f[0]=1,f[1]=1
+	for (i = 2; i < 20; i++) //从f[2]开始，f[i]=f[i-1]+f[i-2]
+		f[i] = f[i - 2] + f[i - 1];
+	for (i = 0; i < 20; i++)
+	{
+		if (i % 5 == 0) cout << endl; //每五个数据换行
+		cout << setw(8) << f[i]; //每个数据输出时占8列位宽
+	}
+	cout << endl;
+	return 0;
+}
